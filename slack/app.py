@@ -1,4 +1,6 @@
 import os
+# import ssl
+# ssl._create_default_https_context = ssl._create_unverified_context
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 from slack_bolt.adapter.flask import SlackRequestHandler
@@ -14,6 +16,10 @@ load_dotenv(find_dotenv())
 SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 SLACK_SIGNING_SECRET = os.environ["SLACK_SIGNING_SECRET"]
 SLACK_BOT_USER_ID = os.environ["SLACK_BOT_USER_ID"]
+
+print("Slack Bot token is "+SLACK_BOT_TOKEN)
+print("Slack Signing Secret is "+SLACK_SIGNING_SECRET)
+print("Slack Bot user id is "+SLACK_BOT_USER_ID)
 
 # Initialize the Slack app
 app = App(token=SLACK_BOT_TOKEN)
